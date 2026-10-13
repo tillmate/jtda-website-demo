@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="color-scheme" content="light dark"><meta name="description" content="Follow the JTDA website build: Figma completion, current work, task estimates, dependencies and review links."><meta name="theme-color" content="#04121D"><title>JTDA · Website build tracker</title><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap"><style>/* Original Claude tracker styling, restored at Franz's request on 12 October 2026. */
+
+  /* Layout: one column of stacked sections, 920px wide, table rows that become cards on a phone. */
+  :root {
+    --bg: #f6f7f5;
+    --surface: #ffffff;
+    --fg: #16211d;
+    --muted: #5d6b65;
+    --line: #d9dfdb;
+    --accent: #0e7c66;
+    --accent-ink: #ffffff;
+    --done: #1f7a3f;
+    --done-bg: #e3f3e8;
+    --busy: #1d5fb8;
+    --busy-bg: #e3ecfb;
+    --todo: #5d6b65;
+    --todo-bg: #eceeec;
+    --need: #9a5a06;
+    --need-bg: #fbeedb;
+    --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "Spline Sans Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101614;
+      --surface: #182220;
+      --fg: #e6ebe8;
+      --muted: #9aa8a2;
+      --line: #2b3733;
+      --accent: #3dd6b0;
+      --accent-ink: #06201a;
+      --done: #6fd394;
+      --done-bg: #16301f;
+      --busy: #8ab4f8;
+      --busy-bg: #172a45;
+      --todo: #9aa8a2;
+      --todo-bg: #222c29;
+      --need: #f2b45a;
+      --need-bg: #3a2a10;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101614;
+    --surface: #182220;
+    --fg: #e6ebe8;
+    --muted: #9aa8a2;
+    --line: #2b3733;
+    --accent: #3dd6b0;
+    --accent-ink: #06201a;
+    --done: #6fd394;
+    --done-bg: #16301f;
+    --busy: #8ab4f8;
+    --busy-bg: #172a45;
+    --todo: #9aa8a2;
+    --todo-bg: #222c29;
+    --need: #f2b45a;
+    --need-bg: #3a2a10;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+  .wrap { max-width: 920px; margin: 0 auto; padding-block: 28px 56px; padding-inline: 20px; display: grid; gap: 28px; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.2; }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; font-weight: 650; }
+  p { margin: 0; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .muted { color: var(--muted); }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  a { color: var(--accent); }
+
+  header { display: grid; gap: 14px; }
+  .headline { display: grid; gap: 6px; }
+  .headline p { max-width: 65ch; }
+  .meter { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: end; }
+  .meter .bar { grid-column: 1 / -1; height: 10px; border-radius: 999px; background: var(--todo-bg); overflow: hidden; }
+  .meter .bar > span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 999px; transition: width 400ms ease; }
+  @media (prefers-reduced-motion: reduce) { .meter .bar > span { transition: none; } }
+  .stats { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .stat b { font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .now { border: 1px solid var(--line); border-left: 4px solid var(--busy); border-radius: 10px; background: var(--surface); padding: 14px 18px; display: grid; gap: 6px; }
+  .now .eyebrow { color: var(--busy); }
+
+  section { display: grid; gap: 12px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+
+  .rows { display: grid; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+  .row { display: grid; grid-template-columns: 56px minmax(0, 1fr) 112px 96px minmax(0, 190px); gap: 0 14px; align-items: start; padding: 11px 16px; border-top: 1px solid var(--line); }
+  .row:first-child { border-top: 0; }
+  .row.head { background: var(--todo-bg); font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-block: 8px; }
+  .row .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+  .row .title { min-width: 0; }
+  .row .title small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .row .est { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .row .needs { min-width: 0; font-size: 13px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 8px; border-radius: 999px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .pill.done { color: var(--done); background: var(--done-bg); }
+  .pill.in_progress { color: var(--busy); background: var(--busy-bg); }
+  .pill.todo { color: var(--todo); background: var(--todo-bg); }
+  .pill.todo::before { background: transparent; border: 1.5px solid currentColor; width: 7px; height: 7px; }
+  .chip { display: inline-block; padding: 1px 8px; border-radius: 6px; background: var(--need-bg); color: var(--need); font-size: 12.5px; font-weight: 500; }
+
+  .phases { display: grid; gap: 8px; }
+  .phase { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding: 10px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .phase .size { font-family: var(--font-mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .phase small { display: block; color: var(--muted); font-size: 13px; }
+
+  .asks { display: grid; gap: 10px; }
+  .ask { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .ask .for { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+  .ask small { display: block; color: var(--muted); font-size: 13px; }
+
+  .empty { padding: 18px 16px; color: var(--muted); }
+  footer { color: var(--muted); font-size: 13px; display: grid; gap: 4px; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 24px; }
+    .row { grid-template-columns: 44px minmax(0, 1fr); grid-template-areas: "num title" "num status" "num est" "num needs"; gap: 4px 10px; }
+    .row.head { display: none; }
+    .row .num { grid-area: num; }
+    .row .title { grid-area: title; }
+    .row .status { grid-area: status; }
+    .row .est { grid-area: est; }
+    .row .needs { grid-area: needs; }
+    .phase { grid-template-columns: minmax(0, 1fr); }
+    .ask { grid-template-columns: minmax(0, 1fr); }
+  }
+
+/* Keep the original desktop appearance while retaining accessible controls and history. */
+:root { font-size: 16px; }
+:root[data-text="large"] { font-size: 32px; }
+body { font-size: .9375rem; overflow-wrap: anywhere; }
+h1 { font-size: 1.875rem; } h2 { font-size: 1.1875rem; } h3 { font-size: inherit; font-weight: 400; line-height: 1.5; }
+.eyebrow, .row.head { font-size: .75rem; }
+.row .title small, .row .needs, .pill, .phase small, .phase .size, .ask small, footer, .table-note { font-size: .8125rem; }
+.chip, .ask .for { font-size: .78125rem; }
+.wrap > *, section > *, header > *, .phase > *, .ask > *, .row > * { min-width: 0; }
+.rows ol { list-style: none; padding: 0; margin: 0; }
+.rows ol > .row:first-child { border-top: 1px solid var(--line); }
+.pill { max-width: 100%; white-space: normal; }
+.pill::before { flex: 0 0 8px; }
+.pill.settled { color: var(--done); background: var(--done-bg); }
+.pill.awaiting_approval, .pill.blocked { color: var(--need); background: var(--need-bg); }
+.row .est { white-space: normal; font-size: .875rem; }
+.phase .size, .ask .for { white-space: normal; max-width: 190px; }
+.meter .mono { white-space: nowrap; }
+.meter .bar > span { width: var(--progress); }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 10px; }
+.toolbar label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; max-width: 100%; }
+button, select { font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; min-height: 44px; max-width: 100%; }
+button { cursor: pointer; } button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+.toolbar a { display: inline-flex; align-items: center; min-height: 44px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.skip { position: absolute; left: 20px; top: -100px; background: var(--surface); padding: 12px; z-index: 2; }
+.skip:focus { top: 10px; }
+.details { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+.details > summary { cursor: pointer; padding: 12px 16px; min-height: 44px; font-weight: 500; }
+.details[open] > summary { border-bottom: 1px solid var(--line); }
+.details-content, .decision-content { display: grid; gap: 10px; padding: 14px 16px; }
+.decision { border-top: 1px solid var(--line); }
+.decision > summary { cursor: pointer; min-height: 44px; padding: 12px 0; }
+.decision-content { padding: 0 0 14px; }
+.history .rows { border: 0; border-radius: 0; }
+.history .rows ol > .row:first-child { border-top: 1px solid var(--line); }
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  .wrap { padding-inline: 16px; }
+  .row .title { grid-area: title; } .row .status { grid-area: status; }
+  .row .est:empty, .row .needs:empty { display: none; }
+  .phase .size, .ask .for { max-width: none; }
+  .rows ol > .row:first-child { border-top: 0; }
+  .meter { grid-template-columns: minmax(0, 1fr) auto; }
+}
+:root[data-text="large"] .row.head { display: none; }
+:root[data-text="large"] .row, :root[data-text="large"] .phase, :root[data-text="large"] .ask { grid-template-columns: minmax(0,1fr); grid-template-areas: none; gap: 8px; }
+:root[data-text="large"] .row > * { grid-area: auto; }
+:root[data-text="large"] .phase .size, :root[data-text="large"] .ask .for { max-width: none; }
+:root[data-text="large"] .meter { grid-template-columns: minmax(0,1fr); }
+:root[data-text="large"] .rows ol > .row:first-child { border-top: 0; }
+@media print { .toolbar, .skip { display:none; } .wrap { max-width:none; } .phase,.ask,.row { break-inside:avoid; } }
+
+/* JTDA accents; the original 876 layout and responsive behaviour stay intact. */
+:root {
+  --bg: #F6F8F7;
+  --surface: #ffffff;
+  --fg: #0A1A29;
+  --muted: #526477;
+  --line: #DDE5EB;
+  --accent: #086B9C;
+  --accent-ink: #ffffff;
+  --busy: #086B9C;
+  --busy-bg: #E5F3FA;
+  --todo: #526477;
+  --todo-bg: #EEF3F6;
+  --need: #865207;
+  --need-bg: #FFF3D3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #04121D; --surface: #0B1D2C; --fg: #ECF2F6; --muted: #A1B3C2;
+    --line: #253A4A; --accent: #68C9F3; --accent-ink: #04121D;
+    --busy: #68C9F3; --busy-bg: #102E42; --todo: #A1B3C2; --todo-bg: #152937;
+    --need: #FFD879; --need-bg: #352D18;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #04121D; --surface: #0B1D2C; --fg: #ECF2F6; --muted: #A1B3C2;
+  --line: #253A4A; --accent: #68C9F3; --accent-ink: #04121D;
+  --busy: #68C9F3; --busy-bg: #102E42; --todo: #A1B3C2; --todo-bg: #152937;
+  --need: #FFD879; --need-bg: #352D18;
+}
+.brand { display:flex; align-items:center; gap:10px; }
+.brand::before { content:""; display:block; flex:0 0 3px; height:20px; background:linear-gradient(to bottom,#FFC629 0 33.3%,#8CC63F 33.3% 66.6%,#1FA9E1 66.6%); }
+.small { font-size:.8125rem; }
+.toolbar { margin-top:0; }
+.now h2 { font-size:1.125rem; }
+.now { border-left-color:#FFC629; }
+.confirmation { display:grid; gap:4px; }
+.confirmation + .confirmation { border-top:1px solid var(--line); padding-top:12px; }
+.confirmation h3 { font-weight:600; }
+.update-list { margin:0; padding:16px 20px 16px 34px; display:grid; gap:16px; }
+.update-list li { padding-left:4px; }
+.update-list time { display:block; margin-bottom:6px; color:var(--muted); }
+.scope-note { padding-top:10px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+details summary:hover, details summary:focus-visible { color:var(--accent); }
+.bar { margin-bottom:1px; }
+.details summary .muted { font-weight:400; }
+@media (max-width:640px) {
+  .wrap { gap:24px; padding-top:24px; }
+  .toolbar { gap:8px 14px; }
+  .meter .stats { gap:6px 16px; }
+  .now { padding:14px; }
+}
+@media print { details:not([open]) { display:none; } }
+</style></head>
+<body><a class="skip" href="#main">Skip to the tracker</a><main class="wrap" id="main">
+<header><div class="headline"><p class="eyebrow brand">JTDA · website build tracker</p><h1>Making the demo ready to share</h1><p class="muted">Figma and the responsive website review are complete. Password-free access is confirmed; the information chatbot, video library and GitHub Pages publication are in progress.</p></div><div class="toolbar" aria-label="Tracker controls"><a href="https://www.figma.com/design/j3kDK4wukN6DJTcfnqY01v/" target="_blank" rel="noopener">Open Figma ↗</a><button type="button" id="refresh">Refresh status</button><label>Appearance <select id="theme"><option value="system">Device setting</option><option value="dark">Dark</option><option value="light">Light</option></select></label><button type="button" id="text-size" aria-pressed="false">200% text</button></div><div class="meter"><div class="stats"><span class="stat"><b>3</b> of <b>4</b> current-phase tasks done</span><span class="stat">Website build started</span></div><span class="mono muted">75%</span><div class="bar" role="progressbar" aria-label="Demo updates &amp; sharing checklist progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" aria-valuetext="3 of 4 checklist items complete"><span style="--progress:75%"></span></div></div><p class="small muted">Progress counts completed checklist items; it does not measure time elapsed.</p></header>
+<aside class="now" aria-labelledby="now-title"><p class="eyebrow">Current milestone</p><h2 id="now-title">Publish the checked demo to GitHub Pages</h2><p class="muted">The information guide and all 43 indexed videos have passed responsive browser checks. GitHub is connected; the public Pages package is being published and verified.</p></aside>
+<section aria-labelledby="current-phase-title"><div class="sec-head"><h2 id="current-phase-title">Demo updates &amp; sharing</h2><p class="muted mono small">Chatbot and videos: 30–60 min each; hosting: 20–40 min after sign-in</p></div><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">U1</span><div class="title"><h3>Add the basic information chatbot</h3><small>30 prepared topics, typed questions and clickable options. 44 matcher scenarios, responsive layouts and keyboard/accessibility checks passed. No AI or message transmission.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">U2</span><div class="title"><h3>Add all 43 verified YouTube videos</h3><small>43 verified uploads, searchable filters, video selection and click-to-load YouTube playback. Desktop and mobile layouts checked; historical content is labelled.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">U3</span><div class="title"><h3>Confirm password-free public access</h3><small>Both existing Sites have native public access confirmed: the website review and the progress tracker. Their current links remain available while GitHub Pages is prepared.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">U4</span><div class="title"><h3>Publish the demo on GitHub Pages</h3><small>GitHub authentication is complete. The compiled demo and tracker are being prepared in tillmate/jtda-website-demo; final public URL verification is pending.</small></div><div class="status"><span class="pill in_progress">In progress</span></div><span class="est"><span class="sr-only">Rough working time: </span>20–40 min after sign-in</span><div class="needs"><span class="chip">Final publication check</span></div></li></ol></div><p class="muted table-note">Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.</p></section>
+<section aria-labelledby="phases-title"><div class="sec-head"><h2 id="phases-title">The build plan</h2><p class="muted small">21 of 27 checklist items complete</p></div><div class="phases"><article class="phase"><div><span class="pill done">Done</span></div><div><b>Finish Figma</b><small>Repair the original layouts, add the admin console and complete the final responsive references.</small></div><span class="size">Complete</span></article><article class="phase"><div><span class="pill done">Done</span></div><div><b>Website foundation</b><small>Next.js, TypeScript, design tokens, reusable components and editable content structure.</small></div><span class="size">Complete</span></article><article class="phase"><div><span class="pill done">Done</span></div><div><b>Public website</b><small>Build the public pages, membership journey, event views, articles, search and contact flow.</small></div><span class="size">Complete</span></article><article class="phase"><div><span class="pill blocked">Blocked</span></div><div><b>Member portal</b><small>Account access, dashboard, digital card, tickets, benefits, learning, directory and billing views.</small></div><span class="size">2–4 h</span></article><article class="phase"><div><span class="pill blocked">Blocked</span></div><div><b>Staff &amp; Super Admin</b><small>Member, event, programme, finance and content management with clear role permissions.</small></div><span class="size">3–5 h</span></article><article class="phase"><div><span class="pill in_progress">In progress</span></div><div><b>Integrations &amp; release review</b><small>Connect agreed services, check critical journeys, review mobile layouts and prepare the release.</small></div><span class="size">2–4 h + provider setup</span></article><article class="phase"><div><span class="pill in_progress">In progress</span></div><div><b>Demo updates &amp; sharing</b><small>Add a basic information chatbot and all 43 verified YouTube videos, confirm password-free access, and publish the selected GitHub Pages demo.</small></div><span class="size">Chatbot and videos: 30–60 min each; hosting: 20–40 min after sign-in</span></article></div><p class="muted small">One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views.</p></section>
+<section aria-labelledby="upcoming-title"><div class="sec-head"><h2 id="upcoming-title">Tasks by phase</h2><p class="muted small">Expand a phase to see its checklist.</p></div><details class="details history"><summary>Finish Figma <span class="muted">· 5/5 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">D1</span><div class="title"><h3>Verify the existing 40 screens</h3><small>The original Figma screens across six pages have been checked against the handoff.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">D2</span><div class="title"><h3>Apply the card and spacer fixes</h3><small>The layout and invisible-spacer corrections are applied across the six original pages.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">D3</span><div class="title"><h3>Complete the Super Admin console</h3><small>Ten desktop admin screens and two mobile web views are complete, with editable components, roles/settings and prototype navigation.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">D4</span><div class="title"><h3>Fill the two desktop design gaps</h3><small>Desktop Join step 2 and My Card are complete and passed visual and font checks.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">D5</span><div class="title"><h3>Review the complete Figma file</h3><small>Final inventory verified: 54 screen references, seven pages. New views passed visual checks; mobile references use browser-only scope.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li></ol></div></details><details class="details history"><summary>Website foundation <span class="muted">· 3/3 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">F1</span><div class="title"><h3>Set up the website and content structure</h3><small>Next.js App Router, TypeScript and editable MDX / JSON content.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">F2</span><div class="title"><h3>Build the shared design components</h3><small>Navigation, footer, typography, buttons, cards, form fields and portal shell.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">F3</span><div class="title"><h3>Check Home at desktop and phone widths</h3><small>Home verified at 1440, 390 and 320px; no overflow, loaded images, mobile menu, Control-K search and truthful newsletter notice checked.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li></ol></div></details><details class="details history"><summary>Public website <span class="muted">· 4/4 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">P1</span><div class="title"><h3>Build the core public pages</h3><small>Home, About, Membership, Partners, Contact and Policy &amp; governance.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">P2</span><div class="title"><h3>Build membership and event journeys</h3><small>Four-step Join, Events, event detail and checkout views; unconfirmed prices remain clearly marked.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">P3</span><div class="title"><h3>Build programmes, news and search</h3><small>BizTech, JCSI, Programs, News, Article and keyboard-accessible search.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">P4</span><div class="title"><h3>Review public mobile web layouts</h3><small>Fourteen representative public routes passed desktop 1440px and mobile 390px checks; no horizontal overflow. Home also passed at 320px.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li></ol></div></details><details class="details history"><summary>Member portal <span class="muted">· 3/4 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">M1</span><div class="title"><h3>Build sign-in and account access</h3><small>Sign-in views are complete and tested. Real magic-link/social accounts await the authentication service.</small></div><div class="status"><span class="pill blocked">Blocked</span></div><span class="est"><span class="sr-only">Rough working time: </span>30–60 min</span><div class="needs"><span class="chip">Authentication provider</span></div></li><li class="row"><span class="num">M2</span><div class="title"><h3>Build dashboard, digital card and tickets</h3><small>Member dashboard, QR card and event / ticket views.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">M3</span><div class="title"><h3>Build benefits and member resources</h3><small>Perks, Learning &amp; CPD, Jobs and Directory.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">M4</span><div class="title"><h3>Build billing and member mobile views</h3><small>All fourteen Join/sign-in/member routes passed at 1440px and 390px. Nine member journey checks passed; billing remains sample data.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li></ol></div></details><details class="details history"><summary>Staff &amp; Super Admin <span class="muted">· 3/4 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">A1</span><div class="title"><h3>Build admin access, overview and members</h3><small>Overview, members and organisations review are complete and tested. Live access and server-enforced roles await authentication and database services.</small></div><div class="status"><span class="pill blocked">Blocked</span></div><span class="est"><span class="sr-only">Rough working time: </span>45–75 min</span><div class="needs"><span class="chip">Authentication and role policy</span></div></li><li class="row"><span class="num">A2</span><div class="title"><h3>Build event and programme management</h3><small>Review event CRUD, waitlists, check-in validation and duplicate protection passed; mobile check-in fits 390px. Production QR credentials remain pending.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">A3</span><div class="title"><h3>Build finance, partners and perks management</h3><small>Payments, invoice and reconciliation views, partner records and member offers.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li><li class="row"><span class="num">A4</span><div class="title"><h3>Build content, moderation and settings</h3><small>News and pages, jobs moderation, plans, email templates, admin users and audit log.</small></div><div class="status"><span class="pill done">Done</span></div><span class="est"><span class="sr-only"></span>Complete</span><div class="needs"></div></li></ol></div></details><details class="details history"><summary>Integrations &amp; release review <span class="muted">· 0/3 complete</span></summary><div class="rows"><div class="row head" aria-hidden="true"><span>#</span><span>Task</span><span>Status</span><span>Estimate</span><span>Dependency</span></div><ol><li class="row"><span class="num">R1</span><div class="title"><h3>Connect the agreed production services</h3><small>No live backend services connected. Durable data, real accounts, email delivery, payment webhooks and signed credentials are the next implementation dependency.</small></div><div class="status"><span class="pill blocked">Blocked</span></div><span class="est"><span class="sr-only">Rough working time: </span>1–2 h + setup</span><div class="needs"><span class="chip">Provider accounts and configuration</span></div></li><li class="row"><span class="num">R2</span><div class="title"><h3>Check the critical journeys and accessibility</h3><small>Review checks passed: 56 public/member layout checks, 9 member journeys, 8 admin UI checks, 7 public interactions, 5 cross-page checks and zero axe violations on five representative pages. Connected live journeys still require testing.</small></div><div class="status"><span class="pill in_progress">In progress</span></div><span class="est"><span class="sr-only">Rough working time: </span>45–90 min</span><div class="needs"></div></li><li class="row"><span class="num">R3</span><div class="title"><h3>Prepare the website for release review</h3><small>The password-free website review and Next.js source package are ready. Final launch needs approved content/policies, confirmed prices/dates, live services and production deployment settings.</small></div><div class="status"><span class="pill in_progress">In progress</span></div><span class="est"><span class="sr-only">Rough working time: </span>20–40 min</span><div class="needs"><span class="chip">Launch details</span></div></li></ol></div></details></section>
+<section aria-labelledby="dependencies-title"><div class="sec-head"><h2 id="dependencies-title">Dependencies & decisions</h2><p class="muted small">Keep the build moving; resolve before the affected work.</p></div><div class="asks"><article class="ask"><div><b>Figma completion</b><small>Figma is complete and verified. Website development started on 13 October 2026.</small></div><span class="for">Resolved</span></article><article class="ask"><div><b>Database, sign-in and email</b><small>The providers and account setup still need to be defined. Page and component work can proceed before services are connected.</small></div><span class="for">Live account workflows</span></article><article class="ask"><div><b>Payments and staff permissions</b><small>Confirm the payment methods, operational settings and the exact permissions for each staff role.</small></div><span class="for">Live transactions and staff access</span></article><article class="ask"><div><b>GitHub Pages connection</b><small>GitHub is connected to the tillmate account. Publication and unauthenticated URL verification are in progress.</small></div><span class="for">Final publication check</span></article><article class="ask"><div><b>Optional AI learning roadmap</b><small>A personalised roadmap grounded in verified JTDA programmes is a proposed future enhancement. It is not implemented and is outside this demo checklist. The basic information chatbot remains non-AI.</small></div><span class="for">Optional future enhancement</span></article></div><details class="details" id="confirmations"><summary>JTDA details to confirm · 4 groups</summary><div class="details-content"><article class="confirmation"><h3>Membership fees</h3><p class="muted small">Keep unpublished fees labelled Pricing TBC. Confirm fees and plan details before enabling real checkout.</p></article><article class="confirmation"><h3>Programme and event details</h3><p class="muted small">Confirm JCSI cost and duration, BizTech 2027 dates and venue, and the sample event dates.</p></article><article class="confirmation"><h3>JTDA contact and brand assets</h3><p class="muted small">Confirm the press email and real LinkedIn company page, and supply higher-resolution headshots when available.</p></article><article class="confirmation"><h3>Tillmate member offer</h3><p class="muted small">Retain Proposed partner · Offer TBC until the offer is confirmed. Keep the agreed in-kind website credit.</p></article></div></details></section>
+<section aria-labelledby="evidence-title"><div class="sec-head"><h2 id="evidence-title">Review links & updates</h2><p class="muted small">Published evidence, with clear status.</p></div><div class="asks"><article class="ask"><div><a href="https://www.figma.com/design/j3kDK4wukN6DJTcfnqY01v/" target="_blank" rel="noopener"><b>Open Figma design ↗</b></a><small>JTDA — Website redesign concept</small></div><span class="for">External link</span></article><article class="ask"><div><a href="https://jtda-website-review.franzweathers.chatgpt.site/review/" target="_blank" rel="noopener"><b>Open the website review ↗</b></a><small>Password-free website review: public pages, sample member portal and sample Super Admin console. GitHub Pages link will follow publication.</small></div><span class="for">External link</span></article><article class="ask"><div><a href="https://jtda-website-review.franzweathers.chatgpt.site/review/admin/" target="_blank" rel="noopener"><b>Open Super Admin review ↗</b></a><small>Ten responsive sections with local review operations; live records and services are not connected.</small></div><span class="for">External link</span></article></div><details class="details"><summary>Update history · 7 entries</summary><ol class="update-list"><li><time class="mono small" datetime="2026-10-13T22:41:37.401Z">13 Oct 2026, 5:41 pm · Jamaica</time><p>Chatbot and video library completed and checked. GitHub connection is ready; the compiled website and tracker are being published on GitHub Pages.</p></li><li><time class="mono small" datetime="2026-10-13T22:32:31Z">13 Oct 2026, 5:32 pm · Jamaica</time><p>Demo-sharing updates started: the non-AI information chatbot and all 43 verified JTDA YouTube videos are in progress. Password-free public access is confirmed on both existing Sites. GitHub Pages was selected; device sign-in is pending before publication. Live backend services remain unconnected.</p></li><li><time class="mono small" datetime="2026-10-13T22:02:00.9468921+00:00">13 Oct 2026, 5:02 pm · Jamaica</time><p>Private website review published. Production build passed; public/member layouts, admin operations, review forms, cross-page navigation and representative accessibility checks passed. Live backend integrations and JTDA launch confirmations remain.</p></li><li><time class="mono small" datetime="2026-10-13T16:48:13.0364845-05:00">13 Oct 2026, 4:48 pm · Jamaica</time><p>Website foundation checked. Home passes 1440, 390 and 320px browser checks. Public, member and admin views are implemented and undergoing review; live services remain pending.</p></li><li><time class="mono small" datetime="2026-10-13T21:17:32Z">13 Oct 2026, 4:17 pm · Jamaica</time><p>Original Figma screen inventory verified and layout fixes applied. Remaining admin and desktop references are in progress. Website development has not started.</p></li><li><time class="mono small" datetime="2026-10-13T16:24:36.9235359-05:00">13 Oct 2026, 4:24 pm · Jamaica</time><p>Figma completed: 54 screen references across seven pages. Super Admin, responsive web layouts and both missing desktop views verified.</p></li><li><time class="mono small" datetime="2026-10-13T16:30:00.5324933-05:00">13 Oct 2026, 4:30 pm · Jamaica</time><p>Website build started. Figma complete; final copy corrections remove unconfirmed exchange estimates and identify sample event details.</p></li></ol></details></section>
+<footer><p><strong>Last published update:</strong> <time datetime="2026-10-13T22:41:37.401Z">13 Oct 2026, 5:41 pm</time> · Jamaica time</p><p>Next milestone: verify the chatbot and all 43 videos, complete GitHub sign-in, then publish and check the GitHub Pages demo.</p><p>Status is updated when work is checked and published. Refresh for the latest saved update.</p><p class="scope-note">JTDA · Jamaica Technology & Digital Alliance</p></footer>
+</main><script>
+(() => {
+  const root = document.documentElement, theme = document.getElementById('theme'), text = document.getElementById('text-size');
+  const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+  const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+  const setTheme = value => { if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value === 'dark' ? 'dark' : 'light'; theme.value = value; };
+  const setText = large => { root.dataset.text = large ? 'large' : 'default'; text.setAttribute('aria-pressed',String(large)); };
+  const saved = read('jtda-tracker-theme'); setTheme(['system','dark','light'].includes(saved) ? saved : 'system'); setText(read('jtda-tracker-large') === 'true');
+  theme.addEventListener('change',() => { setTheme(theme.value); save('jtda-tracker-theme',theme.value); });
+  text.addEventListener('click',() => { const large = text.getAttribute('aria-pressed') !== 'true'; setText(large); save('jtda-tracker-large',String(large)); });
+  document.getElementById('refresh').addEventListener('click',() => location.reload());
+})();
+</script></body></html>

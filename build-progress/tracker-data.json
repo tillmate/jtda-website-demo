@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "title": "JTDA · Website build tracker",
+    "headline": "Making the demo ready to share",
+    "subline": "Figma and the responsive website review are complete. Password-free access is confirmed; the information chatbot, video library and GitHub Pages publication are in progress.",
+    "currentPhase": "demo-updates",
+    "updatedAt": "2026-10-13T22:41:37.401Z",
+    "websiteStarted": true,
+    "currentWork": "Publish the checked demo to GitHub Pages",
+    "currentWorkNote": "The information guide and all 43 indexed videos have passed responsive browser checks. GitHub is connected; the public Pages package is being published and verified.",
+    "nextUpdate": "Next milestone: verify the chatbot and all 43 videos, complete GitHub sign-in, then publish and check the GitHub Pages demo.",
+    "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
+    "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
+  },
+  "links": [
+    {
+      "label": "Open Figma design",
+      "url": "https://www.figma.com/design/j3kDK4wukN6DJTcfnqY01v/",
+      "note": "JTDA — Website redesign concept"
+    },
+    {
+      "label": "Open the website review",
+      "url": "https://jtda-website-review.franzweathers.chatgpt.site/review/",
+      "note": "Password-free website review: public pages, sample member portal and sample Super Admin console. GitHub Pages link will follow publication."
+    },
+    {
+      "label": "Open Super Admin review",
+      "url": "https://jtda-website-review.franzweathers.chatgpt.site/review/admin/",
+      "note": "Ten responsive sections with local review operations; live records and services are not connected."
+    }
+  ],
+  "phases": [
+    {
+      "id": "design",
+      "title": "Finish Figma",
+      "summary": "Repair the original layouts, add the admin console and complete the final responsive references.",
+      "estimate": "Complete"
+    },
+    {
+      "id": "foundation",
+      "title": "Website foundation",
+      "summary": "Next.js, TypeScript, design tokens, reusable components and editable content structure.",
+      "estimate": "1–2 h"
+    },
+    {
+      "id": "public",
+      "title": "Public website",
+      "summary": "Build the public pages, membership journey, event views, articles, search and contact flow.",
+      "estimate": "2–4 h"
+    },
+    {
+      "id": "member",
+      "title": "Member portal",
+      "summary": "Account access, dashboard, digital card, tickets, benefits, learning, directory and billing views.",
+      "estimate": "2–4 h"
+    },
+    {
+      "id": "admin",
+      "title": "Staff & Super Admin",
+      "summary": "Member, event, programme, finance and content management with clear role permissions.",
+      "estimate": "3–5 h"
+    },
+    {
+      "id": "review",
+      "title": "Integrations & release review",
+      "summary": "Connect agreed services, check critical journeys, review mobile layouts and prepare the release.",
+      "estimate": "2–4 h + provider setup"
+    },
+    {
+      "id": "demo-updates",
+      "title": "Demo updates & sharing",
+      "summary": "Add a basic information chatbot and all 43 verified YouTube videos, confirm password-free access, and publish the selected GitHub Pages demo.",
+      "estimate": "Chatbot and videos: 30–60 min each; hosting: 20–40 min after sign-in"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "D1",
+      "phase": "design",
+      "title": "Verify the existing 40 screens",
+      "status": "done",
+      "estimate": "Done",
+      "note": "The original Figma screens across six pages have been checked against the handoff."
+    },
+    {
+      "id": "D2",
+      "phase": "design",
+      "title": "Apply the card and spacer fixes",
+      "status": "done",
+      "estimate": "Done",
+      "note": "The layout and invisible-spacer corrections are applied across the six original pages."
+    },
+    {
+      "id": "D3",
+      "phase": "design",
+      "title": "Complete the Super Admin console",
+      "status": "done",
+      "estimate": "Done",
+      "note": "Ten desktop admin screens and two mobile web views are complete, with editable components, roles/settings and prototype navigation."
+    },
+    {
+      "id": "D4",
+      "phase": "design",
+      "title": "Fill the two desktop design gaps",
+      "status": "done",
+      "estimate": "Done",
+      "note": "Desktop Join step 2 and My Card are complete and passed visual and font checks."
+    },
+    {
+      "id": "D5",
+      "phase": "design",
+      "title": "Review the complete Figma file",
+      "status": "done",
+      "estimate": "Done",
+      "note": "Final inventory verified: 54 screen references, seven pages. New views passed visual checks; mobile references use browser-only scope."
+    },
+    {
+      "id": "F1",
+      "phase": "foundation",
+      "title": "Set up the website and content structure",
+      "status": "done",
+      "estimate": "20–40 min",
+      "note": "Next.js App Router, TypeScript and editable MDX / JSON content."
+    },
+    {
+      "id": "F2",
+      "phase": "foundation",
+      "title": "Build the shared design components",
+      "status": "done",
+      "estimate": "30–60 min",
+      "note": "Navigation, footer, typography, buttons, cards, form fields and portal shell."
+    },
+    {
+      "id": "F3",
+      "phase": "foundation",
+      "title": "Check Home at desktop and phone widths",
+      "status": "done",
+      "estimate": "20–40 min",
+      "note": "Home verified at 1440, 390 and 320px; no overflow, loaded images, mobile menu, Control-K search and truthful newsletter notice checked."
+    },
+    {
+      "id": "P1",
+      "phase": "public",
+      "title": "Build the core public pages",
+      "status": "done",
+      "estimate": "45–75 min",
+      "note": "Home, About, Membership, Partners, Contact and Policy & governance."
+    },
+    {
+      "id": "P2",
+      "phase": "public",
+      "title": "Build membership and event journeys",
+      "status": "done",
+      "estimate": "45–75 min",
+      "note": "Four-step Join, Events, event detail and checkout views; unconfirmed prices remain clearly marked."
+    },
+    {
+      "id": "P3",
+      "phase": "public",
+      "title": "Build programmes, news and search",
+      "status": "done",
+      "estimate": "30–60 min",
+      "note": "BizTech, JCSI, Programs, News, Article and keyboard-accessible search."
+    },
+    {
+      "id": "P4",
+      "phase": "public",
+      "title": "Review public mobile web layouts",
+      "status": "done",
+      "estimate": "20–40 min",
+      "note": "Fourteen representative public routes passed desktop 1440px and mobile 390px checks; no horizontal overflow. Home also passed at 320px."
+    },
+    {
+      "id": "M1",
+      "phase": "member",
+      "title": "Build sign-in and account access",
+      "status": "blocked",
+      "estimate": "30–60 min",
+      "note": "Sign-in views are complete and tested. Real magic-link/social accounts await the authentication service.",
+      "needs": "Authentication provider"
+    },
+    {
+      "id": "M2",
+      "phase": "member",
+      "title": "Build dashboard, digital card and tickets",
+      "status": "done",
+      "estimate": "40–70 min",
+      "note": "Member dashboard, QR card and event / ticket views."
+    },
+    {
+      "id": "M3",
+      "phase": "member",
+      "title": "Build benefits and member resources",
+      "status": "done",
+      "estimate": "40–70 min",
+      "note": "Perks, Learning & CPD, Jobs and Directory."
+    },
+    {
+      "id": "M4",
+      "phase": "member",
+      "title": "Build billing and member mobile views",
+      "status": "done",
+      "estimate": "30–60 min",
+      "note": "All fourteen Join/sign-in/member routes passed at 1440px and 390px. Nine member journey checks passed; billing remains sample data."
+    },
+    {
+      "id": "A1",
+      "phase": "admin",
+      "title": "Build admin access, overview and members",
+      "status": "blocked",
+      "estimate": "45–75 min",
+      "note": "Overview, members and organisations review are complete and tested. Live access and server-enforced roles await authentication and database services.",
+      "needs": "Authentication and role policy"
+    },
+    {
+      "id": "A2",
+      "phase": "admin",
+      "title": "Build event and programme management",
+      "status": "done",
+      "estimate": "45–75 min",
+      "note": "Review event CRUD, waitlists, check-in validation and duplicate protection passed; mobile check-in fits 390px. Production QR credentials remain pending."
+    },
+    {
+      "id": "A3",
+      "phase": "admin",
+      "title": "Build finance, partners and perks management",
+      "status": "done",
+      "estimate": "45–75 min",
+      "note": "Payments, invoice and reconciliation views, partner records and member offers."
+    },
+    {
+      "id": "A4",
+      "phase": "admin",
+      "title": "Build content, moderation and settings",
+      "status": "done",
+      "estimate": "45–75 min",
+      "note": "News and pages, jobs moderation, plans, email templates, admin users and audit log."
+    },
+    {
+      "id": "R1",
+      "phase": "review",
+      "title": "Connect the agreed production services",
+      "status": "blocked",
+      "estimate": "1–2 h + setup",
+      "note": "No live backend services connected. Durable data, real accounts, email delivery, payment webhooks and signed credentials are the next implementation dependency.",
+      "needs": "Provider accounts and configuration"
+    },
+    {
+      "id": "R2",
+      "phase": "review",
+      "title": "Check the critical journeys and accessibility",
+      "status": "in_progress",
+      "estimate": "45–90 min",
+      "note": "Review checks passed: 56 public/member layout checks, 9 member journeys, 8 admin UI checks, 7 public interactions, 5 cross-page checks and zero axe violations on five representative pages. Connected live journeys still require testing."
+    },
+    {
+      "id": "R3",
+      "phase": "review",
+      "title": "Prepare the website for release review",
+      "status": "in_progress",
+      "estimate": "20–40 min",
+      "note": "The password-free website review and Next.js source package are ready. Final launch needs approved content/policies, confirmed prices/dates, live services and production deployment settings.",
+      "needs": "Launch details"
+    },
+    {
+      "id": "U1",
+      "phase": "demo-updates",
+      "title": "Add the basic information chatbot",
+      "status": "done",
+      "estimate": "30–60 min",
+      "note": "30 prepared topics, typed questions and clickable options. 44 matcher scenarios, responsive layouts and keyboard/accessibility checks passed. No AI or message transmission."
+    },
+    {
+      "id": "U2",
+      "phase": "demo-updates",
+      "title": "Add all 43 verified YouTube videos",
+      "status": "done",
+      "estimate": "30–60 min",
+      "note": "43 verified uploads, searchable filters, video selection and click-to-load YouTube playback. Desktop and mobile layouts checked; historical content is labelled."
+    },
+    {
+      "id": "U3",
+      "phase": "demo-updates",
+      "title": "Confirm password-free public access",
+      "status": "done",
+      "estimate": "Done",
+      "note": "Both existing Sites have native public access confirmed: the website review and the progress tracker. Their current links remain available while GitHub Pages is prepared."
+    },
+    {
+      "id": "U4",
+      "phase": "demo-updates",
+      "title": "Publish the demo on GitHub Pages",
+      "status": "in_progress",
+      "estimate": "20–40 min after sign-in",
+      "note": "GitHub authentication is complete. The compiled demo and tracker are being prepared in tillmate/jtda-website-demo; final public URL verification is pending.",
+      "needs": "Final publication check"
+    }
+  ],
+  "dependencies": [
+    {
+      "title": "Figma completion",
+      "detail": "Figma is complete and verified. Website development started on 13 October 2026.",
+      "blocks": "Resolved"
+    },
+    {
+      "title": "Database, sign-in and email",
+      "detail": "The providers and account setup still need to be defined. Page and component work can proceed before services are connected.",
+      "blocks": "Live account workflows"
+    },
+    {
+      "title": "Payments and staff permissions",
+      "detail": "Confirm the payment methods, operational settings and the exact permissions for each staff role.",
+      "blocks": "Live transactions and staff access"
+    },
+    {
+      "title": "GitHub Pages connection",
+      "detail": "GitHub is connected to the tillmate account. Publication and unauthenticated URL verification are in progress.",
+      "blocks": "Final publication check"
+    },
+    {
+      "title": "Optional AI learning roadmap",
+      "detail": "A personalised roadmap grounded in verified JTDA programmes is a proposed future enhancement. It is not implemented and is outside this demo checklist. The basic information chatbot remains non-AI.",
+      "blocks": "Optional future enhancement"
+    }
+  ],
+  "confirmations": [
+    {
+      "title": "Membership fees",
+      "detail": "Keep unpublished fees labelled Pricing TBC. Confirm fees and plan details before enabling real checkout."
+    },
+    {
+      "title": "Programme and event details",
+      "detail": "Confirm JCSI cost and duration, BizTech 2027 dates and venue, and the sample event dates."
+    },
+    {
+      "title": "JTDA contact and brand assets",
+      "detail": "Confirm the press email and real LinkedIn company page, and supply higher-resolution headshots when available."
+    },
+    {
+      "title": "Tillmate member offer",
+      "detail": "Retain Proposed partner · Offer TBC until the offer is confirmed. Keep the agreed in-kind website credit."
+    }
+  ],
+  "updates": [
+    {
+      "at": "2026-10-13T16:30:00.5324933-05:00",
+      "text": "Website build started. Figma complete; final copy corrections remove unconfirmed exchange estimates and identify sample event details."
+    },
+    {
+      "at": "2026-10-13T16:24:36.9235359-05:00",
+      "text": "Figma completed: 54 screen references across seven pages. Super Admin, responsive web layouts and both missing desktop views verified."
+    },
+    {
+      "at": "2026-10-13T21:17:32Z",
+      "text": "Original Figma screen inventory verified and layout fixes applied. Remaining admin and desktop references are in progress. Website development has not started."
+    },
+    {
+      "at": "2026-10-13T16:48:13.0364845-05:00",
+      "text": "Website foundation checked. Home passes 1440, 390 and 320px browser checks. Public, member and admin views are implemented and undergoing review; live services remain pending."
+    },
+    {
+      "at": "2026-10-13T22:02:00.9468921+00:00",
+      "text": "Private website review published. Production build passed; public/member layouts, admin operations, review forms, cross-page navigation and representative accessibility checks passed. Live backend integrations and JTDA launch confirmations remain."
+    },
+    {
+      "at": "2026-10-13T22:32:31Z",
+      "text": "Demo-sharing updates started: the non-AI information chatbot and all 43 verified JTDA YouTube videos are in progress. Password-free public access is confirmed on both existing Sites. GitHub Pages was selected; device sign-in is pending before publication. Live backend services remain unconnected."
+    },
+    {
+      "at": "2026-10-13T22:41:37.401Z",
+      "text": "Chatbot and video library completed and checked. GitHub connection is ready; the compiled website and tracker are being published on GitHub Pages."
+    }
+  ]
+}
