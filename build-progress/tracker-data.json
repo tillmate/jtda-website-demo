@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Designing a more distinctive JTDA experience",
-    "subline": "The published demo is being refined with a stronger visual identity, a Connected Jamaica hero and purposeful motion. Existing content, the information guide and all 43 videos are being preserved.",
+    "headline": "The redesign is in final testing",
+    "subline": "The new identity, Connected Jamaica hero and scroll stories are implemented. The production export passed; final responsive, motion and accessibility checks are underway before publication.",
     "currentPhase": "redesign",
-    "updatedAt": "2026-10-13T23:15:39Z",
+    "updatedAt": "2026-10-13T23:25:21Z",
     "websiteStarted": true,
-    "currentWork": "Refine the identity, Connected Jamaica hero and scroll stories",
-    "currentWorkNote": "Typography, composition and shared navigation are being refined alongside a lightweight Three.js Jamaica visual and scoped GSAP sequences. Reduced-motion and WebGL fallbacks, keyboard access and responsive layouts will be checked before publication. Live backend services remain unconnected.",
-    "nextUpdate": "Next milestone: review the rendered redesign, check mobile/tablet/desktop and motion fallbacks, then publish and verify the updated GitHub Pages demo.",
+    "currentWork": "Test final responsive layouts, motion fallbacks and accessibility",
+    "currentWorkNote": "Desktop at 1440px, tablets at 768/1024px and phones at 320/390px passed the first responsive checks, with video and guide interactions retained. Minor label contrast issues were found and corrected; the final QA rerun is pending. Rough remaining estimate: 15–30 minutes. Live backend services remain unconnected.",
+    "nextUpdate": "Next milestone: finish the contrast and motion-fallback rerun, then publish and verify the redesigned GitHub Pages demo.",
     "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
@@ -86,7 +86,7 @@
       "id": "redesign",
       "title": "Visual identity & motion redesign",
       "summary": "A more distinctive identity, Connected Jamaica hero, varied scroll stories and polished interactions, with responsive and accessible fallbacks.",
-      "estimate": "1–2 h active work · rough estimate"
+      "estimate": "15–30 min remaining · rough estimate"
     }
   ],
   "tasks": [
@@ -314,41 +314,41 @@
       "id": "V1",
       "phase": "redesign",
       "title": "Strengthen identity, typography and page composition",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "25–45 min",
-      "note": "Refine graphite and warm-white surfaces, restrained cyan/gold accents, larger typography, authentic photography and shared navigation/footer states. Preserve the existing content and destinations."
+      "note": "Implemented graphite and warm-white surfaces, restrained cyan/gold accents, larger typography, authentic photography and shared navigation/footer states. Existing content and destinations are retained."
     },
     {
       "id": "V2",
       "phase": "redesign",
       "title": "Build the Connected Jamaica hero",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "30–50 min",
-      "note": "Create an accurate Jamaica outline with conceptual connections, lightweight Three.js depth and a static SVG fallback. Keep both primary actions available and respect reduced motion."
+      "note": "Implemented the Connected Jamaica visual with conceptual connections, lightweight Three.js depth, a static SVG fallback and a motion pause control. Primary actions remain available; final fallback verification is included in QA."
     },
     {
       "id": "V3",
       "phase": "redesign",
       "title": "Add purposeful GSAP stories and small interactions",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "30–50 min",
-      "note": "Coordinate the four pillars, BizTech photography and history timeline; keep events and membership easy to scan. Use native scrolling and clean up animation resources on route changes."
+      "note": "Implemented the four-pillar story, BizTech image treatment, progressive history line and restrained interactions. Motion is scoped, native scrolling is retained and reduced-motion layouts keep the content available."
     },
     {
       "id": "V4",
       "phase": "redesign",
       "title": "Check responsive layouts, accessibility and motion fallbacks",
-      "status": "todo",
-      "estimate": "20–35 min",
-      "note": "Inspect desktop, tablet and mobile screenshots; test keyboard navigation, reduced motion, unavailable WebGL, route changes, overflow, broken resources and retained video/guide interactions."
+      "status": "in_progress",
+      "estimate": "10–20 min",
+      "note": "First checks passed at 1440, 1024, 768, 390 and 320px, including retained video and guide interactions. Minor label contrast issues were found and fixed. Final contrast, responsive and motion-fallback QA rerun is pending."
     },
     {
       "id": "V5",
       "phase": "redesign",
       "title": "Build, publish and verify the redesigned demo",
       "status": "todo",
-      "estimate": "10–20 min",
-      "note": "Run the production export with the GitHub Pages base path, publish the reviewed files and verify the live address. Existing public links continue to show the last published version until then."
+      "estimate": "5–10 min after QA",
+      "note": "Production export passed: 79 HTML pages and 2,750 checked references. Publication and live verification await final QA; the existing public link still shows the last published version."
     }
   ],
   "dependencies": [
@@ -432,6 +432,10 @@
     {
       "at": "2026-10-13T23:15:39Z",
       "text": "Visual redesign started from the new brief. Identity/layout, the Connected Jamaica hero and purposeful scroll stories are in progress; responsive/accessibility checks and publication follow. Rough estimate: 1–2 hours of active work across parallel tasks. Existing content, the non-AI guide and all 43 videos remain in scope."
+    },
+    {
+      "at": "2026-10-13T23:25:21Z",
+      "text": "Identity/layout, Connected Jamaica and scroll stories implemented. Production export passed with 79 HTML pages and 2,750 checked references. Initial responsive and video/guide interaction checks passed across desktop, tablet and phone sizes. Minor label contrast issues were corrected; final QA rerun and publication remain. Rough estimate: 15–30 minutes of active work."
     }
   ]
 }
