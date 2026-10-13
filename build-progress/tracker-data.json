@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Making the demo ready to share",
-    "subline": "Figma and the responsive website review are complete. Password-free access is confirmed; the information chatbot, video library and GitHub Pages publication are in progress.",
+    "headline": "The public demo is ready to share",
+    "subline": "The responsive JTDA website, member and Super Admin reviews, information guide and video library are published on GitHub Pages.",
     "currentPhase": "demo-updates",
-    "updatedAt": "2026-10-13T22:41:37.401Z",
+    "updatedAt": "2026-10-13T22:44:34.517Z",
     "websiteStarted": true,
-    "currentWork": "Publish the checked demo to GitHub Pages",
-    "currentWorkNote": "The information guide and all 43 indexed videos have passed responsive browser checks. GitHub is connected; the public Pages package is being published and verified.",
-    "nextUpdate": "Next milestone: verify the chatbot and all 43 videos, complete GitHub sign-in, then publish and check the GitHub Pages demo.",
+    "currentWork": "Explore the public demo",
+    "currentWorkNote": "The website and tracker open without a viewing password. Explore the non-AI information guide and all 43 indexed YouTube uploads. Member and admin reviews use fictional data; live backend services remain to be connected.",
+    "nextUpdate": "Next milestone: select live account, data, email and payment services, confirm JTDA launch details, and test the connected journeys.",
     "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
@@ -19,14 +19,24 @@
       "note": "JTDA — Website redesign concept"
     },
     {
-      "label": "Open the website review",
-      "url": "https://jtda-website-review.franzweathers.chatgpt.site/review/",
-      "note": "Password-free website review: public pages, sample member portal and sample Super Admin console. GitHub Pages link will follow publication."
+      "label": "Open the public website",
+      "url": "https://tillmate.github.io/jtda-website-demo/",
+      "note": "Public GitHub Pages demo with information guide and video library. No viewing password."
     },
     {
       "label": "Open Super Admin review",
-      "url": "https://jtda-website-review.franzweathers.chatgpt.site/review/admin/",
+      "url": "https://tillmate.github.io/jtda-website-demo/review/admin/",
       "note": "Ten responsive sections with local review operations; live records and services are not connected."
+    },
+    {
+      "label": "Browse the video library",
+      "url": "https://tillmate.github.io/jtda-website-demo/videos/",
+      "note": "43 verified public uploads with search, topic filters and embedded playback."
+    },
+    {
+      "label": "Explore member and staff reviews",
+      "url": "https://tillmate.github.io/jtda-website-demo/review/",
+      "note": "Clearly labelled fictional review data; live operations are not connected."
     }
   ],
   "phases": [
@@ -284,16 +294,15 @@
       "title": "Confirm password-free public access",
       "status": "done",
       "estimate": "Done",
-      "note": "Both existing Sites have native public access confirmed: the website review and the progress tracker. Their current links remain available while GitHub Pages is prepared."
+      "note": "GitHub Pages and both original Sites open publicly. Unauthenticated HTTP checks returned the pages directly, with no sign-in redirect."
     },
     {
       "id": "U4",
       "phase": "demo-updates",
       "title": "Publish the demo on GitHub Pages",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "20–40 min after sign-in",
-      "note": "GitHub authentication is complete. The compiled demo and tracker are being prepared in tillmate/jtda-website-demo; final public URL verification is pending.",
-      "needs": "Final publication check"
+      "note": "Published at tillmate.github.io/jtda-website-demo with the tracker at /build-progress/. GitHub deployment succeeded and unauthenticated website, videos, admin review and tracker requests returned HTTP 200."
     }
   ],
   "dependencies": [
@@ -314,8 +323,8 @@
     },
     {
       "title": "GitHub Pages connection",
-      "detail": "GitHub is connected to the tillmate account. Publication and unauthenticated URL verification are in progress.",
-      "blocks": "Final publication check"
+      "detail": "GitHub Pages deployment succeeded. The clean public address and progress page were checked without authentication.",
+      "blocks": "Resolved"
     },
     {
       "title": "Optional AI learning roadmap",
@@ -369,6 +378,10 @@
     {
       "at": "2026-10-13T22:41:37.401Z",
       "text": "Chatbot and video library completed and checked. GitHub connection is ready; the compiled website and tracker are being published on GitHub Pages."
+    },
+    {
+      "at": "2026-10-13T22:44:34.517Z",
+      "text": "GitHub Pages publication succeeded. Website, video library, sample admin and tracker returned HTTP 200 without authentication. All four demo-sharing tasks are complete; live backend integrations and JTDA confirmations remain."
     }
   ]
 }
