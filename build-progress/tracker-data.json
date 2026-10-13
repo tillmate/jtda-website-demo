@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "The redesigned JTDA demo is live",
-    "subline": "Connected Jamaica, the new visual identity and purposeful scroll stories are published on GitHub Pages. Desktop, tablet, mobile and accessibility checks are complete.",
-    "currentPhase": "redesign",
-    "updatedAt": "2026-10-13T23:41:15.410Z",
+    "headline": "Adding clearer motion and the finishing touches",
+    "subline": "The redesign is live. This follow-up makes the Jamaica map visibly animated, applies the supplied transparent logo and makes member, admin and Super Admin entry points easier to find.",
+    "currentPhase": "map-finishing",
+    "updatedAt": "2026-10-13T23:55:09Z",
     "websiteStarted": true,
-    "currentWork": "Explore the redesigned public website",
-    "currentWorkNote": "The public deployment and browser journeys are verified. The non-AI guide, 43-video library, member review and Super Admin review are retained. No viewing password is required. Live account, data, email and payment services remain unconnected.",
-    "nextUpdate": "Next milestone: confirm JTDA launch details and select the live account, database, email and payment services.",
+    "currentWork": "Refine Jamaica map motion, the logo and account entry points",
+    "currentWorkNote": "More noticeable map animation is being added within the existing layout, with pause and reduced-motion behaviour preserved. The attached transparent logo and clearer member/admin/Super Admin access links are also in progress. Responsive and final publication checks follow. These remain review entry points; live authentication and backend services are unconnected.",
+    "nextUpdate": "Next milestone: verify visible map motion, logo transparency, mobile layouts and account entry links, then publish and check the updated demo.",
     "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
@@ -87,6 +87,12 @@
       "title": "Visual identity & motion redesign",
       "summary": "A more distinctive identity, Connected Jamaica hero, varied scroll stories and polished interactions, with responsive and accessible fallbacks.",
       "estimate": "Complete"
+    },
+    {
+      "id": "map-finishing",
+      "title": "Map motion & finishing touches",
+      "summary": "Make the Jamaica illustration visibly animated, apply the supplied transparent logo and clarify member, admin and Super Admin entry points without disrupting the responsive layout.",
+      "estimate": "Motion 20–40 min · logo/access 10–20 min · QA 10–20 min"
     }
   ],
   "tasks": [
@@ -349,6 +355,30 @@
       "status": "done",
       "estimate": "Done",
       "note": "GitHub Pages deployment succeeded; the redesigned homepage returned HTTP 200. Live browser checks confirmed the 3D hero, public navigation, 43 videos, prepared-answer guide, member card link and staff review, with no page errors or failed same-origin resources."
+    },
+    {
+      "id": "W1",
+      "phase": "map-finishing",
+      "title": "Make Connected Jamaica visibly animated",
+      "status": "in_progress",
+      "estimate": "20–40 min",
+      "note": "Increase the visibility of the conceptual map motion while preserving the hero layout and mobile usability. Keep pause controls, reduced-motion support and suitable fallbacks. No live activity or member locations are implied."
+    },
+    {
+      "id": "W2",
+      "phase": "map-finishing",
+      "title": "Apply the transparent logo and clarify account access",
+      "status": "in_progress",
+      "estimate": "10–20 min",
+      "note": "Use the supplied transparent JTDA logo and make member, admin and Super Admin entry points visible and understandable. Clearly distinguish sample review access from live accounts, which remain unconnected."
+    },
+    {
+      "id": "W3",
+      "phase": "map-finishing",
+      "title": "Verify the finishing touches and publish the update",
+      "status": "todo",
+      "estimate": "10–20 min",
+      "note": "Check desktop and mobile layout, visible animation, pause/reduced-motion behaviour, logo appearance and working access links. Publish after verification and confirm the updated public demo; the current address shows the last verified release until then."
     }
   ],
   "dependencies": [
@@ -444,6 +474,10 @@
     {
       "at": "2026-10-13T23:41:15.410Z",
       "text": "Connected Jamaica redesign published and verified on GitHub Pages. All five redesign tasks are complete. Responsive layouts, reduced-motion/WebGL fallbacks, keyboard journeys and accessibility checks passed. Production backend connections and JTDA launch confirmations remain separate open tasks."
+    },
+    {
+      "at": "2026-10-13T23:55:09Z",
+      "text": "Map motion and finishing touches started: more noticeable Jamaica animation, the supplied transparent logo and clearer member/admin/Super Admin entry points. Rough working estimates: animation 20–40 minutes, logo/access 10–20 minutes, QA/publication 10–20 minutes. The existing redesign remains live; this follow-up is not yet published. Live backend tasks remain open."
     }
   ]
 }
