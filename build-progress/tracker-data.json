@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "The public demo is ready to share",
-    "subline": "The responsive JTDA website, member and Super Admin reviews, information guide and video library are published on GitHub Pages.",
-    "currentPhase": "demo-updates",
-    "updatedAt": "2026-10-13T22:44:34.517Z",
+    "headline": "Designing a more distinctive JTDA experience",
+    "subline": "The published demo is being refined with a stronger visual identity, a Connected Jamaica hero and purposeful motion. Existing content, the information guide and all 43 videos are being preserved.",
+    "currentPhase": "redesign",
+    "updatedAt": "2026-10-13T23:15:39Z",
     "websiteStarted": true,
-    "currentWork": "Explore the public demo",
-    "currentWorkNote": "The website and tracker open without a viewing password. Explore the non-AI information guide and all 43 indexed YouTube uploads. Member and admin reviews use fictional data; live backend services remain to be connected.",
-    "nextUpdate": "Next milestone: select live account, data, email and payment services, confirm JTDA launch details, and test the connected journeys.",
+    "currentWork": "Refine the identity, Connected Jamaica hero and scroll stories",
+    "currentWorkNote": "Typography, composition and shared navigation are being refined alongside a lightweight Three.js Jamaica visual and scoped GSAP sequences. Reduced-motion and WebGL fallbacks, keyboard access and responsive layouts will be checked before publication. Live backend services remain unconnected.",
+    "nextUpdate": "Next milestone: review the rendered redesign, check mobile/tablet/desktop and motion fallbacks, then publish and verify the updated GitHub Pages demo.",
     "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
@@ -81,6 +81,12 @@
       "title": "Demo updates & sharing",
       "summary": "Add a basic information chatbot and all 43 verified YouTube videos, confirm password-free access, and publish the selected GitHub Pages demo.",
       "estimate": "Chatbot and videos: 30–60 min each; hosting: 20–40 min after sign-in"
+    },
+    {
+      "id": "redesign",
+      "title": "Visual identity & motion redesign",
+      "summary": "A more distinctive identity, Connected Jamaica hero, varied scroll stories and polished interactions, with responsive and accessible fallbacks.",
+      "estimate": "1–2 h active work · rough estimate"
     }
   ],
   "tasks": [
@@ -303,6 +309,46 @@
       "status": "done",
       "estimate": "20–40 min after sign-in",
       "note": "Published at tillmate.github.io/jtda-website-demo with the tracker at /build-progress/. GitHub deployment succeeded and unauthenticated website, videos, admin review and tracker requests returned HTTP 200."
+    },
+    {
+      "id": "V1",
+      "phase": "redesign",
+      "title": "Strengthen identity, typography and page composition",
+      "status": "in_progress",
+      "estimate": "25–45 min",
+      "note": "Refine graphite and warm-white surfaces, restrained cyan/gold accents, larger typography, authentic photography and shared navigation/footer states. Preserve the existing content and destinations."
+    },
+    {
+      "id": "V2",
+      "phase": "redesign",
+      "title": "Build the Connected Jamaica hero",
+      "status": "in_progress",
+      "estimate": "30–50 min",
+      "note": "Create an accurate Jamaica outline with conceptual connections, lightweight Three.js depth and a static SVG fallback. Keep both primary actions available and respect reduced motion."
+    },
+    {
+      "id": "V3",
+      "phase": "redesign",
+      "title": "Add purposeful GSAP stories and small interactions",
+      "status": "in_progress",
+      "estimate": "30–50 min",
+      "note": "Coordinate the four pillars, BizTech photography and history timeline; keep events and membership easy to scan. Use native scrolling and clean up animation resources on route changes."
+    },
+    {
+      "id": "V4",
+      "phase": "redesign",
+      "title": "Check responsive layouts, accessibility and motion fallbacks",
+      "status": "todo",
+      "estimate": "20–35 min",
+      "note": "Inspect desktop, tablet and mobile screenshots; test keyboard navigation, reduced motion, unavailable WebGL, route changes, overflow, broken resources and retained video/guide interactions."
+    },
+    {
+      "id": "V5",
+      "phase": "redesign",
+      "title": "Build, publish and verify the redesigned demo",
+      "status": "todo",
+      "estimate": "10–20 min",
+      "note": "Run the production export with the GitHub Pages base path, publish the reviewed files and verify the live address. Existing public links continue to show the last published version until then."
     }
   ],
   "dependencies": [
@@ -382,6 +428,10 @@
     {
       "at": "2026-10-13T22:44:34.517Z",
       "text": "GitHub Pages publication succeeded. Website, video library, sample admin and tracker returned HTTP 200 without authentication. All four demo-sharing tasks are complete; live backend integrations and JTDA confirmations remain."
+    },
+    {
+      "at": "2026-10-13T23:15:39Z",
+      "text": "Visual redesign started from the new brief. Identity/layout, the Connected Jamaica hero and purposeful scroll stories are in progress; responsive/accessibility checks and publication follow. Rough estimate: 1–2 hours of active work across parallel tasks. Existing content, the non-AI guide and all 43 videos remain in scope."
     }
   ]
 }
