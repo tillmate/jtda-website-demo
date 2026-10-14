@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Polishing the client presentation",
+    "headline": "Your client walkthrough is ready",
     "subline": "Member and Super Admin demo accounts, a complete sign-in journey, and optional animated lights on Jamaica.",
     "currentPhase": "demo-accounts",
-    "updatedAt": "2026-10-14T00:33:44.610Z",
+    "updatedAt": "2026-10-14T00:37:45.271Z",
     "websiteStarted": true,
-    "currentWork": "Remove repeated demo labels and map footnotes",
-    "currentWorkNote": "The complete sign-in journey is live. Finishing the requested copy cleanup across the public site and both workspaces, then verifying it on desktop and mobile.",
-    "nextUpdate": "Next: publish the clean presentation and verify the account journeys still work.",
-    "estimateNote": "Remaining active work: approximately 10–15 minutes for final checks and publication.",
+    "currentWork": "Account walkthrough and presentation verified live",
+    "currentWorkNote": "Member and Super Admin accounts, animation playback and clean presentation are live on the GitHub Pages link. Production services remain separate work.",
+    "nextUpdate": "The client can explore now. Production account services remain tracked below.",
+    "estimateNote": "This update is complete. Production integration estimates below depend on JTDA decisions and service setup.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
   "links": [
@@ -98,7 +98,7 @@
       "id": "demo-accounts",
       "title": "Client account walkthrough",
       "summary": "Demo sign-in, staged member and Super Admin journeys, plus an explicit motion control.",
-      "estimate": "Publishing"
+      "estimate": "Complete"
     }
   ],
   "tasks": [
@@ -414,7 +414,7 @@
       "id": "L4",
       "phase": "demo-accounts",
       "title": "Clean client-facing presentation",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "10–20 min",
       "note": "Remove map footnotes and repeated demo labels throughout public pages, account access, member and admin workspaces. Keep actual dates, pricing and operational outcomes accurate."
     }
@@ -540,6 +540,10 @@
     {
       "at": "2026-10-14T00:33:44.610Z",
       "text": "Client requested removal of map footnotes and repeated demo labels. Presentation cleanup underway; actual operational outcomes remain accurate."
+    },
+    {
+      "at": "2026-10-14T00:37:45.271Z",
+      "text": "Clean client presentation published: map footnotes and repeated demo labels removed; both account journeys rechecked."
     }
   ]
 }
