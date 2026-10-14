@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "The finishing touches are live",
-    "subline": "The Jamaica map now has visible travelling signals and an interactive pulse. The supplied transparent logo and clearer member, admin and Super Admin entry points are published and verified.",
-    "currentPhase": "map-finishing",
-    "updatedAt": "2026-10-14T00:06:42.756Z",
+    "headline": "Building the client account walkthrough",
+    "subline": "A complete demo sign-in for member and Super Admin sample accounts, plus a visible animation control for browsers with reduced motion enabled.",
+    "currentPhase": "demo-accounts",
+    "updatedAt": "2026-10-14T00:16:54.508Z",
     "websiteStarted": true,
-    "currentWork": "Explore the animated map and portal access",
-    "currentWorkNote": "The updated public demo is live. All 18 targeted local browser checks passed across six viewport widths, including visible motion, pause freeze, keyboard/tap pulses, visibility and cleanup, fallback resizing, reduced motion and data-saving mode. Live checks confirmed the logo, portal access, member and admin reviews, Settings, all 43 videos and the information guide. Live authentication, durable records, email and payments remain unconnected.",
-    "nextUpdate": "This finishing-touches phase is complete. The remaining production work is live service integration and JTDA launch confirmations.",
-    "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
+    "currentWork": "Connect demo sign-in, account journeys and motion preferences",
+    "currentWorkNote": "The animation issue was traced in the current browser to its reduced-motion preference. An explicit Play animation option is being added. The client walkthrough uses browser-local sample credentials, account navigation and sign-out; real authentication remains a separate production task.",
+    "nextUpdate": "Next: test both account journeys, refresh/sign-out, role separation, mobile layouts and animation opt-in, then publish.",
+    "estimateNote": "Rough remaining active work: 30–50 minutes across implementation, browser checks and publication. This demo does not need an external authentication provider.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
   "links": [
@@ -93,6 +93,12 @@
       "title": "Map motion & finishing touches",
       "summary": "Make the Jamaica illustration visibly animated, apply the supplied transparent logo and clarify member, admin and Super Admin entry points without disrupting the responsive layout.",
       "estimate": "Complete"
+    },
+    {
+      "id": "demo-accounts",
+      "title": "Client account walkthrough",
+      "summary": "Demo sign-in, staged member and Super Admin journeys, plus an explicit motion control.",
+      "estimate": "30–50 min"
     }
   ],
   "tasks": [
@@ -379,6 +385,30 @@
       "status": "done",
       "estimate": "Complete",
       "note": "All 18 targeted local browser checks passed at 320, 390, 768, 1024, 1060 and 1440px. Homepage and access-page accessibility scans had zero violations; the final export checked 79 HTML pages and 2,961 references with zero issues. GitHub Pages workflow 38488056580 succeeded for commit ca723ce4f0f7ae491936952ddd890b3adf58c219. Live browser checks verified motion/pulse, logo, portal links, member/admin reviews, Settings, 43 videos and the guide, with no page errors or failed same-origin resources."
+    },
+    {
+      "id": "L1",
+      "phase": "demo-accounts",
+      "title": "Animation opt-in for reduced-motion browsers",
+      "status": "in_progress",
+      "estimate": "10–15 min",
+      "note": "Keep the device preference as the default and expose Play animation with a lightweight, tab-local opt-in."
+    },
+    {
+      "id": "L2",
+      "phase": "demo-accounts",
+      "title": "Member and Super Admin demo accounts",
+      "status": "in_progress",
+      "estimate": "20–35 min",
+      "note": "Visible sample credentials, sign-in validation, browser session, account routes and sign-out."
+    },
+    {
+      "id": "L3",
+      "phase": "demo-accounts",
+      "title": "Client journey verification and publication",
+      "status": "todo",
+      "estimate": "10–15 min",
+      "note": "Check account entry, refresh, sign-out, role separation, local sample actions, motion settings and responsive layouts."
     }
   ],
   "dependencies": [
@@ -486,6 +516,10 @@
     {
       "at": "2026-10-14T00:06:42.756Z",
       "text": "The finishing touches are live and verified. All 18 targeted local browser checks passed across six viewport widths; homepage and access-page accessibility scans had zero violations. The final export covered 79 HTML pages and 2,961 references with zero issues. GitHub Pages deployment succeeded; live checks confirmed the pulse, transparent logo, portal access, member/admin reviews, Settings, 43 videos and the information guide with no page errors or failed same-origin resources. Live backend dependencies remain open."
+    },
+    {
+      "at": "2026-10-14T00:16:54.508Z",
+      "text": "Client demo account walkthrough started. The browser was verified to be in reduced-motion mode, explaining the static map. User selected demo login on the current GitHub link with member and Super Admin sample accounts."
     }
   ]
 }
