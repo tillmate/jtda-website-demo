@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Verifying the finishing touches",
-    "subline": "The stronger Jamaica map motion, supplied transparent logo and clearer member, admin and Super Admin entry points are implemented. Final checks and publication are in progress.",
+    "headline": "The finishing touches are live",
+    "subline": "The Jamaica map now has visible travelling signals and an interactive pulse. The supplied transparent logo and clearer member, admin and Super Admin entry points are published and verified.",
     "currentPhase": "map-finishing",
-    "updatedAt": "2026-10-14T00:02:50.287Z",
+    "updatedAt": "2026-10-14T00:06:42.756Z",
     "websiteStarted": true,
-    "currentWork": "Final verification and publication of the finishing touches",
-    "currentWorkNote": "Travelling gold and cyan tails, arrival pulses and a keyboard/tap Send a pulse control are implemented, with SVG motion on mobile, pause and reduced-motion support. The transparent logo and clearer portal access are complete. The production rebuild passed and initial desktop motion, pause, pulse, visibility, accessibility, logo and cleanup checks passed. The final targeted suite is still running; live authentication and backend services remain unconnected.",
-    "nextUpdate": "Next milestone: complete the final targeted checks, publish the update and verify the public demo. Rough remaining active time: 10–15 minutes.",
+    "currentWork": "Explore the animated map and portal access",
+    "currentWorkNote": "The updated public demo is live. All 18 targeted local browser checks passed across six viewport widths, including visible motion, pause freeze, keyboard/tap pulses, visibility and cleanup, fallback resizing, reduced motion and data-saving mode. Live checks confirmed the logo, portal access, member and admin reviews, Settings, all 43 videos and the information guide. Live authentication, durable records, email and payments remain unconnected.",
+    "nextUpdate": "This finishing-touches phase is complete. The remaining production work is live service integration and JTDA launch confirmations.",
     "estimateNote": "Estimates are rough active working-time ranges, not delivery promises. Provider setup and JTDA decisions can change the remaining time.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
@@ -92,7 +92,7 @@
       "id": "map-finishing",
       "title": "Map motion & finishing touches",
       "summary": "Make the Jamaica illustration visibly animated, apply the supplied transparent logo and clarify member, admin and Super Admin entry points without disrupting the responsive layout.",
-      "estimate": "Final QA and publication: 10–15 min"
+      "estimate": "Complete"
     }
   ],
   "tasks": [
@@ -361,24 +361,24 @@
       "phase": "map-finishing",
       "title": "Make Connected Jamaica visibly animated",
       "status": "done",
-      "estimate": "Done",
-      "note": "Implemented travelling gold/cyan tails and arrival pulses, plus a Send a pulse control for keyboard and tap. Mobile uses lightweight SVG animation; pause, reduced-motion and visibility suspension are retained. Initial desktop motion and lifecycle checks passed; final targeted verification is tracked below. The map remains a conceptual illustration."
+      "estimate": "Complete",
+      "note": "Published travelling gold/cyan tails and arrival pulses, plus a Send a pulse control for keyboard and tap. Visible motion, pause freeze, mobile SVG, visibility suspension, cleanup, fallback resizing, reduced motion and data-saving behaviour passed targeted checks. The map remains a conceptual illustration."
     },
     {
       "id": "W2",
       "phase": "map-finishing",
       "title": "Apply the transparent logo and clarify account access",
       "status": "done",
-      "estimate": "Done",
-      "note": "Applied the exact supplied transparent JTDA logo and clarified member, admin and Super Admin entry points. Initial logo and access checks passed. Review access remains labelled as sample data; live accounts and services are not connected."
+      "estimate": "Complete",
+      "note": "The exact supplied transparent JTDA logo and clear member, admin and Super Admin entry points are live and browser-verified. Member and admin review links, including Settings, work. Review access remains labelled as sample data; live accounts and services are not connected."
     },
     {
       "id": "W3",
       "phase": "map-finishing",
       "title": "Verify the finishing touches and publish the update",
-      "status": "in_progress",
-      "estimate": "10–15 min",
-      "note": "The final production rebuild passed; the initial export check covered 79 HTML pages and 2,961 references. Initial browser checks passed for desktop frame changes, pause freeze, keyboard pulse, offscreen/hidden suspension, accessibility, logo and unmount cleanup. The full final targeted suite is underway. Publication and live verification remain; the public address still shows the last verified release."
+      "status": "done",
+      "estimate": "Complete",
+      "note": "All 18 targeted local browser checks passed at 320, 390, 768, 1024, 1060 and 1440px. Homepage and access-page accessibility scans had zero violations; the final export checked 79 HTML pages and 2,961 references with zero issues. GitHub Pages workflow 38488056580 succeeded for commit ca723ce4f0f7ae491936952ddd890b3adf58c219. Live browser checks verified motion/pulse, logo, portal links, member/admin reviews, Settings, 43 videos and the guide, with no page errors or failed same-origin resources."
     }
   ],
   "dependencies": [
@@ -482,6 +482,10 @@
     {
       "at": "2026-10-14T00:02:50.287Z",
       "text": "Map motion and logo/access implementation completed. The production rebuild and initial desktop motion, pause, keyboard pulse, visibility, accessibility, logo and cleanup checks passed. Final targeted verification is underway, followed by publication and live checks. Rough remaining active time: 10–15 minutes. Live backend tasks remain open."
+    },
+    {
+      "at": "2026-10-14T00:06:42.756Z",
+      "text": "The finishing touches are live and verified. All 18 targeted local browser checks passed across six viewport widths; homepage and access-page accessibility scans had zero violations. The final export covered 79 HTML pages and 2,961 references with zero issues. GitHub Pages deployment succeeded; live checks confirmed the pulse, transparent logo, portal access, member/admin reviews, Settings, 43 videos and the information guide with no page errors or failed same-origin resources. Live backend dependencies remain open."
     }
   ]
 }
