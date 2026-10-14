@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Building the client account walkthrough",
-    "subline": "A complete demo sign-in for member and Super Admin sample accounts, plus a visible animation control for browsers with reduced motion enabled.",
+    "headline": "Publishing the client walkthrough",
+    "subline": "Member and Super Admin demo accounts, a complete sign-in journey, and optional animated lights on Jamaica.",
     "currentPhase": "demo-accounts",
-    "updatedAt": "2026-10-14T00:16:54.508Z",
+    "updatedAt": "2026-10-14T00:26:09.746Z",
     "websiteStarted": true,
-    "currentWork": "Connect demo sign-in, account journeys and motion preferences",
-    "currentWorkNote": "The animation issue was traced in the current browser to its reduced-motion preference. An explicit Play animation option is being added. The client walkthrough uses browser-local sample credentials, account navigation and sign-out; real authentication remains a separate production task.",
-    "nextUpdate": "Next: test both account journeys, refresh/sign-out, role separation, mobile layouts and animation opt-in, then publish.",
-    "estimateNote": "Rough remaining active work: 30–50 minutes across implementation, browser checks and publication. This demo does not need an external authentication provider.",
+    "currentWork": "Local checks passed; publishing and verifying the public link",
+    "currentWorkNote": "All 21 local browser checks passed, including both account journeys, sample changes and reset, role checks, refresh, sign-out, mobile layouts and accessibility scans.",
+    "nextUpdate": "Next: verify the published account journeys and animation in the current browser.",
+    "estimateNote": "Estimated remaining active work: 10–15 minutes for publication and live verification.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
   "links": [
@@ -24,9 +24,9 @@
       "note": "Public GitHub Pages demo with information guide and video library. No viewing password."
     },
     {
-      "label": "Open Super Admin review",
-      "url": "https://tillmate.github.io/jtda-website-demo/review/admin/",
-      "note": "Ten responsive sections with local review operations; live records and services are not connected."
+      "label": "Try Super Admin sign-in",
+      "url": "https://tillmate.github.io/jtda-website-demo/sign-in/?role=super-admin",
+      "note": "Avery Campbell sample account; fictional records and local demo operations."
     },
     {
       "label": "Browse the video library",
@@ -34,9 +34,9 @@
       "note": "43 verified public uploads with search, topic filters and embedded playback."
     },
     {
-      "label": "Explore member and staff reviews",
-      "url": "https://tillmate.github.io/jtda-website-demo/review/",
-      "note": "Clearly labelled fictional review data; live operations are not connected."
+      "label": "Start the client walkthrough",
+      "url": "https://tillmate.github.io/jtda-website-demo/sign-in/",
+      "note": "Choose Member or Super Admin, fill the public sample credentials and sign in."
     }
   ],
   "phases": [
@@ -98,7 +98,7 @@
       "id": "demo-accounts",
       "title": "Client account walkthrough",
       "summary": "Demo sign-in, staged member and Super Admin journeys, plus an explicit motion control.",
-      "estimate": "30–50 min"
+      "estimate": "Publishing"
     }
   ],
   "tasks": [
@@ -390,25 +390,25 @@
       "id": "L1",
       "phase": "demo-accounts",
       "title": "Animation opt-in for reduced-motion browsers",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "10–15 min",
-      "note": "Keep the device preference as the default and expose Play animation with a lightweight, tab-local opt-in."
+      "note": "Device preferences remain the default. Play animation explicitly enables lightweight moving lights; play/pause persists through refresh in the same tab."
     },
     {
       "id": "L2",
       "phase": "demo-accounts",
       "title": "Member and Super Admin demo accounts",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "20–35 min",
-      "note": "Visible sample credentials, sign-in validation, browser session, account routes and sign-out."
+      "note": "Member Kemar Brown and Super Admin Avery Campbell have public sample credentials, validated sign-in, tab sessions, simulated password reset, account navigation, sign-out and fixture reset."
     },
     {
       "id": "L3",
       "phase": "demo-accounts",
       "title": "Client journey verification and publication",
-      "status": "todo",
+      "status": "in_progress",
       "estimate": "10–15 min",
-      "note": "Check account entry, refresh, sign-out, role separation, local sample actions, motion settings and responsive layouts."
+      "note": "21 local browser checks passed; public verification underway."
     }
   ],
   "dependencies": [
@@ -520,6 +520,10 @@
     {
       "at": "2026-10-14T00:16:54.508Z",
       "text": "Client demo account walkthrough started. The browser was verified to be in reduced-motion mode, explaining the static map. User selected demo login on the current GitHub link with member and Super Admin sample accounts."
+    },
+    {
+      "at": "2026-10-14T00:26:09.746Z",
+      "text": "21 local client-journey checks passed. Publishing the new sign-in and motion controls, followed by live verification."
     }
   ]
 }
