@@ -1,15 +1,15 @@
 {
   "meta": {
     "title": "JTDA · Website build tracker",
-    "headline": "Publishing the client walkthrough",
+    "headline": "Polishing the client presentation",
     "subline": "Member and Super Admin demo accounts, a complete sign-in journey, and optional animated lights on Jamaica.",
     "currentPhase": "demo-accounts",
-    "updatedAt": "2026-10-14T00:26:09.746Z",
+    "updatedAt": "2026-10-14T00:33:44.610Z",
     "websiteStarted": true,
-    "currentWork": "Local checks passed; publishing and verifying the public link",
-    "currentWorkNote": "All 21 local browser checks passed, including both account journeys, sample changes and reset, role checks, refresh, sign-out, mobile layouts and accessibility scans.",
-    "nextUpdate": "Next: verify the published account journeys and animation in the current browser.",
-    "estimateNote": "Estimated remaining active work: 10–15 minutes for publication and live verification.",
+    "currentWork": "Remove repeated demo labels and map footnotes",
+    "currentWorkNote": "The complete sign-in journey is live. Finishing the requested copy cleanup across the public site and both workspaces, then verifying it on desktop and mobile.",
+    "nextUpdate": "Next: publish the clean presentation and verify the account journeys still work.",
+    "estimateNote": "Remaining active work: approximately 10–15 minutes for final checks and publication.",
     "scope": "One responsive website: public pages, a member portal and the staff / Super Admin console. Phone layouts are mobile web views."
   },
   "links": [
@@ -406,9 +406,17 @@
       "id": "L3",
       "phase": "demo-accounts",
       "title": "Client journey verification and publication",
-      "status": "in_progress",
+      "status": "done",
       "estimate": "10–15 min",
-      "note": "21 local browser checks passed; public verification underway."
+      "note": "Local end-to-end checks and live public checks passed. Public demo account journeys and explicit animation playback verified."
+    },
+    {
+      "id": "L4",
+      "phase": "demo-accounts",
+      "title": "Clean client-facing presentation",
+      "status": "in_progress",
+      "estimate": "10–20 min",
+      "note": "Remove map footnotes and repeated demo labels throughout public pages, account access, member and admin workspaces. Keep actual dates, pricing and operational outcomes accurate."
     }
   ],
   "dependencies": [
@@ -524,6 +532,14 @@
     {
       "at": "2026-10-14T00:26:09.746Z",
       "text": "21 local client-journey checks passed. Publishing the new sign-in and motion controls, followed by live verification."
+    },
+    {
+      "at": "2026-10-14T00:30:30.157Z",
+      "text": "Client demo accounts and animation opt-in published and checked on the public GitHub Pages site. Sample records are browser-local; real authentication, email, payments and databases remain separate production work."
+    },
+    {
+      "at": "2026-10-14T00:33:44.610Z",
+      "text": "Client requested removal of map footnotes and repeated demo labels. Presentation cleanup underway; actual operational outcomes remain accurate."
     }
   ]
 }
